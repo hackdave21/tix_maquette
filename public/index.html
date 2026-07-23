@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TixTogo — Billetterie omnicanale</title>
+  <meta name="description" content="L'infrastructure de billetterie conçue pour les organisateurs africains. Vendez vos billets en ligne, sur WhatsApp et dans vos points de vente.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tixtogo.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="bg-paper-white sticky top-0 z-50" style="border-bottom:1.5px solid rgba(27,22,15,0.16);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-ink rounded-lg flex items-center justify-center">
+        <span class="text-paper-white font-display text-sm font-bold">T</span>
+      </div>
+      <span class="font-display text-xl text-ink hidden sm:block">TixTogo</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-ink-soft">
+      <a href="index.html" class="text-ink font-semibold">Événements</a>
+      <a href="recherche.html" class="hover:text-ink transition">Recherche</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="mes-billets.html" class="btn btn-outline btn-sm hidden sm:inline-flex">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+        Mes billets
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="relative overflow-hidden" style="background:var(--color-paper-white);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+    <div class="max-w-2xl">
+      <div class="eyebrow">Billetterie omnicanale</div>
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl text-ink leading-tight mt-2">
+        Vendez vos billets,<br>partout, tout simplement.
+      </h1>
+      <p class="text-lg text-ink-soft mt-6 max-w-xl leading-relaxed">
+        En ligne, sur WhatsApp, dans vos points de vente. Mobile Money, ambassadeurs, contrôle d'accès — tout consolidé dans un seul tableau de bord.
+      </p>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a href="recherche.html" class="btn btn-primary btn-lg">
+          Découvrir les événements
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="../organisateur/index.html" class="btn btn-dark btn-lg">
+          Espace organisateur
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Décor billet perforé -->
+  <div class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-12">
+    <div class="ticket-card" style="width:340px;transform:rotate(3deg);opacity:0.15;">
+      <div class="p-6"><span class="badge badge-amber">Standard</span><h4 class="font-display text-xl mt-3">Concert</h4></div>
+      <div class="stub-divider"></div>
+      <div class="p-6 flex justify-between"><span class="ticket-code">#TX-0000-XX</span><span class="font-display text-xl">5 000 F</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ÉVÉNEMENTS À VENIR ===== -->
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <div class="eyebrow">Prochains événements</div>
+        <h2 class="font-display text-2xl sm:text-3xl text-ink mt-1">Événements à venir</h2>
+      </div>
+      <a href="recherche.html" class="btn btn-outline btn-sm hidden sm:inline-flex">
+        Tout voir
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <!-- Grille événements -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Événement 1 -->
+      <a href="evenement.html" class="ticket-card card-interactive">
+        <div class="h-44 flex items-center justify-center" style="background:linear-gradient(135deg,var(--color-amber-pale),var(--color-paper-soft));">
+          <span class="font-display text-amber-deep text-5xl opacity-20">TIX</span>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="badge badge-amber text-[10px]">Concert</span>
+            <span class="text-xs text-ink-soft font-mono">15 Août 2026</span>
+          </div>
+          <h3 class="font-display text-base text-ink leading-snug">Concert — Salle Nyékonakpoè</h3>
+          <p class="text-xs text-ink-soft mt-1">Lomé, Togo</p>
+          <div class="stub-divider on-paper" style="margin:12px 0;"></div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-ink-soft">À partir de</span>
+            <span class="font-display text-lg text-ink">3 000 F</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Événement 2 -->
+      <a href="evenement.html" class="ticket-card card-interactive">
+        <div class="h-44 flex items-center justify-center" style="background:linear-gradient(135deg,var(--color-teal-pale),var(--color-paper-soft));">
+          <span class="font-display text-teal text-5xl opacity-20">TIX</span>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="badge badge-valid text-[10px]">Conférence</span>
+            <span class="text-xs text-ink-soft font-mono">22 Août 2026</span>
+          </div>
+          <h3 class="font-display text-base text-ink leading-snug">Tech Summit Lomé 2026</h3>
+          <p class="text-xs text-ink-soft mt-1">Palais des Congrès, Lomé</p>
+          <div class="stub-divider on-paper" style="margin:12px 0;"></div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-ink-soft">À partir de</span>
+            <span class="font-display text-lg text-ink">15 000 F</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Événement 3 -->
+      <a href="evenement.html" class="ticket-card card-interactive">
+        <div class="h-44 flex items-center justify-center" style="background:linear-gradient(135deg,var(--color-red-pale),var(--color-paper-soft));">
+          <span class="font-display text-red-custom text-5xl opacity-20">TIX</span>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="badge badge-used text-[10px]">Soirée</span>
+            <span class="text-xs text-ink-soft font-mono">30 Août 2026</span>
+          </div>
+          <h3 class="font-display text-base text-ink leading-snug">Beach Party — Lomé</h3>
+          <p class="text-xs text-ink-soft mt-1">Plage de Lomé, Togo</p>
+          <div class="stub-divider on-paper" style="margin:12px 0;"></div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-ink-soft">À partir de</span>
+            <span class="font-display text-lg text-ink">5 000 F</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Événement 4 -->
+      <a href="evenement.html" class="ticket-card card-interactive">
+        <div class="h-44 flex items-center justify-center" style="background:linear-gradient(135deg,var(--color-amber-pale),var(--color-paper-soft));">
+          <span class="font-display text-amber-deep text-5xl opacity-20">TIX</span>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="badge badge-amber text-[10px]">Match</span>
+            <span class="text-xs text-ink-soft font-mono">05 Sep 2026</span>
+          </div>
+          <h3 class="font-display text-base text-ink leading-snug">Togo vs Nigeria — Kégué</h3>
+          <p class="text-xs text-ink-soft mt-1">Stade de Kégué, Lomé</p>
+          <div class="stub-divider on-paper" style="margin:12px 0;"></div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-ink-soft">À partir de</span>
+            <span class="font-display text-lg text-ink">2 000 F</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Événement 5 -->
+      <a href="evenement.html" class="ticket-card card-interactive">
+        <div class="h-44 flex items-center justify-center" style="background:linear-gradient(135deg,var(--color-teal-pale),var(--color-paper-soft));">
+          <span class="font-display text-teal text-5xl opacity-20">TIX</span>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="badge badge-valid text-[10px]">Cérémonie</span>
+            <span class="text-xs text-ink-soft font-mono">12 Sep 2026</span>
+          </div>
+          <h3 class="font-display text-base text-ink leading-snug">Gala de l'Excellence</h3>
+          <p class="text-xs text-ink-soft mt-1">Hôtel Kara, Lomé</p>
+          <div class="stub-divider on-paper" style="margin:12px 0;"></div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-ink-soft">À partir de</span>
+            <span class="font-display text-lg text-ink">25 000 F</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Événement 6 -->
+      <a href="evenement.html" class="ticket-card card-interactive">
+        <div class="h-44 flex items-center justify-center" style="background:linear-gradient(135deg,var(--color-red-pale),var(--color-paper-soft));">
+          <span class="font-display text-red-custom text-5xl opacity-20">TIX</span>
+        </div>
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="badge badge-used text-[10px]">Autre</span>
+            <span class="text-xs text-ink-soft font-mono">20 Sep 2026</span>
+          </div>
+          <h3 class="font-display text-base text-ink leading-snug">Festival des Arts</h3>
+          <p class="text-xs text-ink-soft mt-1">Centre Culturel, Lomé</p>
+          <div class="stub-divider on-paper" style="margin:12px 0;"></div>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-ink-soft">À partir de</span>
+            <span class="font-display text-lg text-ink">Gratuit</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- CTA mobile -->
+    <div class="mt-8 text-center sm:hidden">
+      <a href="recherche.html" class="btn btn-primary">
+        Tout voir
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMMENT ÇA MARCHE ===== -->
+<section class="py-16" style="background:var(--color-paper-white);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <div class="eyebrow">Simple et rapide</div>
+      <h2 class="font-display text-2xl sm:text-3xl text-ink mt-1">Comment ça marche ?</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <!-- Étape 1 -->
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-amber-pale flex items-center justify-center mb-4">
+          <span class="font-display text-2xl text-amber-deep">1</span>
+        </div>
+        <h3 class="font-display text-lg text-ink mb-2">Choisissez votre événement</h3>
+        <p class="text-sm text-ink-soft leading-relaxed max-w-xs mx-auto">
+          Parcourez les événements à venir, filtrez par ville ou catégorie, et trouvez celui qui vous plaît.
+        </p>
+      </div>
+
+      <!-- Étape 2 -->
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-teal-pale flex items-center justify-center mb-4">
+          <span class="font-display text-2xl text-teal">2</span>
+        </div>
+        <h3 class="font-display text-lg text-ink mb-2">Payez par Mobile Money</h3>
+        <p class="text-sm text-ink-soft leading-relaxed max-w-xs mx-auto">
+          Sélectionnez votre billet, choisissez Flooz ou T-Money, et confirmez sur votre téléphone. C'est tout.
+        </p>
+      </div>
+
+      <!-- Étape 3 -->
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-amber-pale flex items-center justify-center mb-4">
+          <span class="font-display text-2xl text-amber-deep">3</span>
+        </div>
+        <h3 class="font-display text-lg text-ink mb-2">Présentez votre billet</h3>
+        <p class="text-sm text-ink-soft leading-relaxed max-w-xs mx-auto">
+          Votre QR code unique est envoyé par SMS. Présentez-le à l'entrée — c'est validé en une seconde.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POUR LES ORGANISATEURS ===== -->
+<section class="py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="eyebrow">Organisateurs</div>
+        <h2 class="font-display text-2xl sm:text-3xl text-ink mt-1 mb-4">
+          Tout contrôler,<br>dans un seul outil.
+        </h2>
+        <p class="text-ink-soft leading-relaxed mb-6">
+          Créez votre événement en quelques minutes. Vendez en ligne, via WhatsApp, dans vos points de vente et par vos ambassadeurs. Suivez tout en temps réel.
+        </p>
+        <ul class="flex flex-col gap-3 mb-8">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-0.5 text-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="text-sm text-ink">Vente en ligne, WhatsApp, ambassadeurs, points de vente</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-0.5 text-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="text-sm text-ink">Paiement Mobile Money (Flooz, T-Money)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-0.5 text-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="text-sm text-ink">Contrôle d'accès QR code en ligne et hors ligne</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-0.5 text-teal flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="text-sm text-ink">Dashboard consolidé avec ventilation par canal</span>
+          </li>
+        </ul>
+        <a href="../organisateur/index.html" class="btn btn-primary">
+          Commencer maintenant
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Visuel dashboard mock -->
+      <div class="ticket-card p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h4 class="font-display text-lg text-ink">Dashboard</h4>
+          <span class="badge badge-valid">En direct</span>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div class="kpi-card">
+            <div class="kpi-value text-ink text-2xl">1 247</div>
+            <div class="kpi-label">Billets vendus</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-value text-ink text-2xl">4.2M F</div>
+            <div class="kpi-label">Chiffre d'affaires</div>
+          </div>
+        </div>
+        <div class="stub-divider on-paper" style="margin:8px 0;"></div>
+        <div class="space-y-2 mt-4">
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-ink-soft">Web</span>
+            <div class="flex-1 mx-3 h-2 rounded-full bg-paper-soft overflow-hidden">
+              <div class="h-full rounded-full" style="width:65%;background:var(--color-amber);"></div>
+            </div>
+            <span class="font-mono text-xs text-ink-soft">65%</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-ink-soft">WhatsApp</span>
+            <div class="flex-1 mx-3 h-2 rounded-full bg-paper-soft overflow-hidden">
+              <div class="h-full rounded-full" style="width:20%;background:var(--color-teal);"></div>
+            </div>
+            <span class="font-mono text-xs text-ink-soft">20%</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-ink-soft">Ambassadeurs</span>
+            <div class="flex-1 mx-3 h-2 rounded-full bg-paper-soft overflow-hidden">
+              <div class="h-full rounded-full" style="width:10%;background:var(--color-red-custom);"></div>
+            </div>
+            <span class="font-mono text-xs text-ink-soft">10%</span>
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-ink-soft">POS</span>
+            <div class="flex-1 mx-3 h-2 rounded-full bg-paper-soft overflow-hidden">
+              <div class="h-full rounded-full" style="width:5%;background:var(--color-ink);"></div>
+            </div>
+            <span class="font-mono text-xs text-ink-soft">5%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="border-t" style="border-color:rgba(27,22,15,0.16);background:var(--color-paper-white);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 bg-ink rounded-lg flex items-center justify-center">
+            <span class="text-paper-white font-display text-sm font-bold">T</span>
+          </div>
+          <span class="font-display text-xl text-ink">TixTogo</span>
+        </div>
+        <p class="text-sm text-ink-soft leading-relaxed">
+          L'infrastructure de billetterie conçue pour les organisateurs africains.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-mono text-xs uppercase tracking-wider text-ink-soft mb-4">Plateforme</h4>
+        <ul class="flex flex-col gap-2 text-sm text-ink-soft">
+          <li><a href="index.html" class="hover:text-ink transition">Événements</a></li>
+          <li><a href="recherche.html" class="hover:text-ink transition">Recherche</a></li>
+          <li><a href="mes-billets.html" class="hover:text-ink transition">Mes billets</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-mono text-xs uppercase tracking-wider text-ink-soft mb-4">Organisateurs</h4>
+        <ul class="flex flex-col gap-2 text-sm text-ink-soft">
+          <li><a href="../organisateur/index.html" class="hover:text-ink transition">Espace organisateur</a></li>
+          <li><a href="#" class="hover:text-ink transition">Créer un événement</a></li>
+          <li><a href="#" class="hover:text-ink transition">Tarification</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-mono text-xs uppercase tracking-wider text-ink-soft mb-4">Informations</h4>
+        <ul class="flex flex-col gap-2 text-sm text-ink-soft">
+          <li><a href="#" class="hover:text-ink transition">Conditions générales</a></li>
+          <li><a href="#" class="hover:text-ink transition">Politique de confidentialité</a></li>
+          <li><a href="#" class="hover:text-ink transition">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top:1px solid rgba(27,22,15,0.10);">
+      <p class="text-xs text-ink-soft">&copy; 2026 TixTogo. Tous droits réservés.</p>
+      <p class="text-xs text-ink-soft">Lomé, Togo</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Bottom nav mobile -->
+<nav class="bottom-nav md:hidden">
+  <a href="index.html" class="bottom-nav-item active">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Accueil
+  </a>
+  <a href="recherche.html" class="bottom-nav-item">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    Recherche
+  </a>
+  <a href="mes-billets.html" class="bottom-nav-item">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+    Billets
+  </a>
+</nav>
+
+</body>
+</html>

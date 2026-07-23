@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Composant — Carte billet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tixtogo.css">
+  <style>
+    body { background: var(--color-paper); padding: 40px; }
+    .example-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 900px; }
+    .example-label { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-ink-soft); margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+
+<div class="example-label">Variante — Billet à venir (valide)</div>
+<div class="ticket-card" style="max-width:380px;margin-bottom:40px;">
+  <div class="p-5">
+    <span class="badge badge-valid">Valide</span>
+    <h4 class="font-display text-lg text-ink mt-3">Concert — Salle Nyékonakpoè</h4>
+    <p class="text-sm text-ink-soft mt-1">Sam. 15 Août 2026 · 20h00</p>
+  </div>
+  <div class="stub-divider"></div>
+  <div class="p-5 flex items-center justify-between">
+    <span class="ticket-code">#TX-8834-FL</span>
+    <span class="font-display text-lg">3 000 F CFA</span>
+  </div>
+</div>
+
+<div class="example-label">Variante — Billet déjà utilisé</div>
+<div class="ticket-card" style="max-width:380px;margin-bottom:40px;opacity:0.7;">
+  <div class="p-5">
+    <span class="badge badge-used">Utilisé</span>
+    <h4 class="font-display text-lg text-ink mt-3">Soirée Beach — Lomé</h4>
+    <p class="text-sm text-ink-soft mt-1">Ven. 20 Juin 2026 · 22h00</p>
+  </div>
+  <div class="stub-divider"></div>
+  <div class="p-5 flex items-center justify-between">
+    <span class="ticket-code">#TX-7721-BN</span>
+    <span class="font-display text-lg">5 000 F CFA</span>
+  </div>
+</div>
+
+<div class="example-label">Variante — Billet en attente de paiement</div>
+<div class="ticket-card" style="max-width:380px;margin-bottom:40px;">
+  <div class="p-5">
+    <span class="badge badge-amber">En attente</span>
+    <h4 class="font-display text-lg text-ink mt-3">Match Togo — Stade de Kégué</h4>
+    <p class="text-sm text-ink-soft mt-1">Dim. 10 Août 2026 · 18h00</p>
+  </div>
+  <div class="stub-divider"></div>
+  <div class="p-5 flex items-center justify-between">
+    <span class="ticket-code">#TX-9912-KG</span>
+    <span class="font-display text-lg">2 000 F CFA</span>
+  </div>
+</div>
+
+<div class="example-label">Variante — KPI card (dashboard organisateur)</div>
+<div class="kpi-card" style="max-width:300px;margin-bottom:40px;">
+  <div class="kpi-value text-ink">1 247</div>
+  <div class="stub-divider on-paper" style="margin:8px 0;"></div>
+  <div class="kpi-label">Billets vendus</div>
+</div>
+
+<div class="example-label">Variante — Événement card (vitrine)</div>
+<div class="ticket-card card-interactive" style="max-width:320px;">
+  <div class="h-44 bg-amber-pale flex items-center justify-center">
+    <span class="font-display text-amber-deep text-4xl opacity-30">Tix</span>
+  </div>
+  <div class="p-4">
+    <div class="flex items-center justify-between mb-2">
+      <span class="badge badge-amber text-[10px]">Concert</span>
+      <span class="text-xs text-ink-soft font-mono">15 Août</span>
+    </div>
+    <h4 class="font-display text-base text-ink leading-snug">Concert — Salle Nyékonakpoè</h4>
+    <p class="text-xs text-ink-soft mt-1">Lomé, Togo</p>
+    <div class="stub-divider on-paper" style="margin:12px 0;"></div>
+    <div class="flex items-center justify-between">
+      <span class="text-xs text-ink-soft">À partir de</span>
+      <span class="font-display text-lg text-ink">3 000 F</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
