@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TixTogo — Charte graphique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B160F;
+    --ink-soft:#5C5344;
+    --paper:#F2E8D4;
+    --paper-soft:#F9F3E6;
+    --paper-white:#FFFCF6;
+    --amber:#E8A33D;
+    --amber-deep:#C97F1E;
+    --amber-pale:#FBE6BE;
+    --teal:#1C7A6B;
+    --teal-pale:#DCEFE9;
+    --red:#C2402F;
+    --red-pale:#F7DEDA;
+    --line:rgba(27,22,15,0.16);
+    --line-strong:rgba(27,22,15,0.30);
+    --radius-card:18px;
+    --radius-ctrl:10px;
+    --shadow-card:0 1px 0 rgba(27,22,15,0.06);
+    --font-display:'Archivo Black', 'Archivo', sans-serif;
+    --font-body:'Archivo', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;letter-spacing:0.2px;margin:0;text-transform:none;}
+  p{margin:0;}
+
+  .app-shell{max-width:1120px;margin:0 auto;padding:40px 24px 96px;}
+  .view-head{margin-bottom:28px;}
+  .eyebrow{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:0.08em;
+    text-transform:uppercase;color:var(--amber-deep);margin-bottom:8px;
+  }
+  .view-head h2{font-size:28px;}
+  .view-head p.sub{margin-top:8px;color:var(--ink-soft);font-size:15px;max-width:60ch;line-height:1.5;}
+
+  /* ---------- perforation / ticket-stub signature ---------- */
+  .stub-divider{
+    position:relative;
+    height:0;
+    border-top:2px dashed var(--line-strong);
+    margin:0 -1px;
+  }
+  .stub-divider::before,.stub-divider::after{
+    content:"";
+    position:absolute;
+    top:-11px;
+    width:22px;height:22px;
+    border-radius:50%;
+    background:var(--paper-white);
+    border:2px dashed var(--line-strong);
+  }
+  .stub-divider::before{left:-12px;}
+  .stub-divider::after{right:-12px;}
+  .stub-divider.on-paper::before,.stub-divider.on-paper::after{background:var(--paper);}
+
+  .ticket-card{
+    background:var(--paper-white);
+    border:1.5px solid var(--line);
+    border-radius:var(--radius-card);
+    overflow:hidden;
+    box-shadow:var(--shadow-card);
+  }
+
+  /* ===================== CHARTE ===================== */
+  .charte-section{margin-bottom:52px;}
+  .charte-section h3{font-size:13px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-soft);margin-bottom:16px;}
+  .swatch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;}
+  .swatch{border-radius:14px;overflow:hidden;border:1.5px solid var(--line);}
+  .swatch-color{height:80px;}
+  .swatch-meta{background:var(--paper-white);padding:10px 12px;}
+  .swatch-meta .name{font-weight:600;font-size:13px;}
+  .swatch-meta .hex{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);}
+
+  .type-row{display:flex;align-items:baseline;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line);gap:16px;flex-wrap:wrap;}
+  .type-row:last-child{border-bottom:none;}
+  .type-sample-display{font-family:var(--font-display);font-size:34px;}
+  .type-sample-body{font-family:var(--font-body);font-size:19px;font-weight:500;}
+  .type-sample-mono{font-family:var(--font-mono);font-size:17px;}
+  .type-label{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);white-space:nowrap;}
+
+  .ui-kit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
+  .kit-card{background:var(--paper-white);border:1.5px solid var(--line);border-radius:16px;padding:20px;}
+  .kit-card .label{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px;letter-spacing:0.06em;}
+
+  .btn{font-family:var(--font-body);font-weight:700;font-size:14px;border-radius:999px;padding:12px 22px;border:2px solid transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+  .btn-primary{background:var(--amber);color:var(--ink);}
+  .btn-primary:hover{background:var(--amber-deep);}
+  .btn-dark{background:var(--ink);color:var(--paper-soft);}
+  .btn-outline{background:transparent;border-color:var(--line-strong);color:var(--ink);}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap;}
+
+  .badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;padding:5px 11px;border-radius:999px;text-transform:uppercase;letter-spacing:0.04em;}
+  .badge-valid{background:var(--teal-pale);color:var(--teal);}
+  .badge-used{background:var(--red-pale);color:var(--red);}
+  .badge-amber{background:var(--amber-pale);color:var(--amber-deep);}
+
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:12.5px;font-weight:600;color:var(--ink-soft);margin-bottom:6px;}
+  .field input,.field select{
+    width:100%;padding:11px 13px;border-radius:var(--radius-ctrl);border:1.5px solid var(--line-strong);
+    background:var(--paper-soft);font-family:var(--font-body);font-size:14px;color:var(--ink);
+  }
+  .ticket-code{font-family:var(--font-mono);font-size:13px;letter-spacing:0.06em;color:var(--ink-soft);}
+</style>
+</head>
+<body>
+<div class="app-shell">
+
+  <section id="view-charte">
+    <div class="view-head">
+      <div class="eyebrow">Identité visuelle · v1.0</div>
+      <h2>Charte graphique TixTogo</h2>
+      <p class="sub">Un langage visuel inspiré du billet lui-même : carton de couleur, tampon de validation, ligne perforée. L'idée directrice : chaque écran doit se lire comme un vrai billet qu'on tient en main — chaud, direct, jamais aseptisé.</p>
+    </div>
+
+    <div class="charte-section">
+      <h3>Palette</h3>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:var(--ink)"></div><div class="swatch-meta"><div class="name">Encre</div><div class="hex">#1B160F</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--paper)"></div><div class="swatch-meta"><div class="name">Carton billet</div><div class="hex">#F2E8D4</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--amber)"></div><div class="swatch-meta"><div class="name">Ambre — CTA</div><div class="hex">#E8A33D</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--amber-deep)"></div><div class="swatch-meta"><div class="name">Ambre profond</div><div class="hex">#C97F1E</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--teal)"></div><div class="swatch-meta"><div class="name">Sarcelle — validé</div><div class="hex">#1C7A6B</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--red)"></div><div class="swatch-meta"><div class="name">Rouge — invalide</div><div class="hex">#C2402F</div></div></div>
+      </div>
+    </div>
+
+    <div class="charte-section">
+      <h3>Typographie</h3>
+      <div class="ticket-card" style="padding:6px 24px;">
+        <div class="type-row"><span class="type-sample-display">Archivo Black</span><span class="type-label">Titres / tampons</span></div>
+        <div class="type-row"><span class="type-sample-body">Archivo — texte courant et boutons</span><span class="type-label">Corps de texte</span></div>
+        <div class="type-row"><span class="type-sample-mono">IBM Plex Mono — TT-24J9-K72Q</span><span class="type-label">Codes billet / data</span></div>
+      </div>
+    </div>
+
+    <div class="charte-section">
+      <h3>Signature : le talon perforé</h3>
+      <div class="ticket-card" style="max-width:420px;">
+        <div style="padding:18px 20px;"><span class="badge badge-amber">Standard</span><h4 style="margin-top:10px;font-size:18px;">Concert — Salle Nyékonakpoè</h4></div>
+        <div class="stub-divider"></div>
+        <div style="padding:18px 20px;display:flex;justify-content:space-between;align-items:center;">
+          <span class="ticket-code">#TX-8834-FL</span>
+          <span style="font-weight:700;">3 000 F CFA</span>
+        </div>
+      </div>
+      <p class="sub" style="margin-top:12px;">Utilisée pour séparer l'information de l'événement du prix — sur les cartes billet, les cartes KPI du tableau de bord, et l'en-tête du tunnel d'achat.</p>
+    </div>
+
+    <div class="charte-section">
+      <h3>Composants</h3>
+      <div class="ui-kit-grid">
+        <div class="kit-card">
+          <div class="label">Boutons</div>
+          <div class="btn-row" style="margin-bottom:10px;"><button class="btn btn-primary">Acheter</button></div>
+          <div class="btn-row" style="margin-bottom:10px;"><button class="btn btn-dark">Publier l'événement</button></div>
+          <div class="btn-row"><button class="btn btn-outline">Annuler</button></div>
+        </div>
+        <div class="kit-card">
+          <div class="label">Statuts de billet</div>
+          <div class="btn-row"><span class="badge badge-valid">Valide</span><span class="badge badge-used">Déjà utilisé</span><span class="badge badge-amber">En attente</span></div>
+        </div>
+        <div class="kit-card">
+          <div class="label">Champ de formulaire</div>
+          <div class="field"><label>Numéro mobile money</label><input placeholder="90 00 00 00"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
