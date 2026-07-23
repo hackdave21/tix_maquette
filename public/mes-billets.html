@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes billets — TixTogo</title>
+  <meta name="description" content="Accédez à vos billets TixTogo. Consultez vos billets à venir, passés et gérez votre espace personnel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tixtogo.css">
+  <style>
+    .otp-inputs input {
+      width: 3rem;
+      height: 3.5rem;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 1.25rem;
+      font-weight: 600;
+      border: 1.5px solid rgba(27,22,15,0.2);
+      border-radius: 0.5rem;
+      background: var(--color-paper-white);
+      color: var(--color-ink);
+      transition: border-color 0.15s;
+    }
+    .otp-inputs input:focus {
+      outline: none;
+      border-color: var(--color-amber);
+      box-shadow: 0 0 0 3px rgba(232,163,61,0.15);
+    }
+    @media (max-width: 640px) {
+      .otp-inputs input {
+        width: 2.5rem;
+        height: 3rem;
+        font-size: 1rem;
+      }
+    }
+    .tab-active {
+      color: var(--color-ink);
+      font-weight: 600;
+      border-bottom: 2px solid var(--color-amber);
+    }
+    .ticket-stub-left,
+    .ticket-stub-right {
+      position: relative;
+    }
+    .ticket-stub-left::after,
+    .ticket-stub-right::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      background: var(--color-paper);
+      transform: translateY(-50%);
+    }
+    .ticket-stub-left::after {
+      right: -0.625rem;
+    }
+    .ticket-stub-right::before {
+      left: -0.625rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="bg-paper-white sticky top-0 z-50" style="border-bottom:1.5px solid rgba(27,22,15,0.16);">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-ink rounded-lg flex items-center justify-center">
+        <span class="text-paper-white font-display text-sm font-bold">T</span>
+      </div>
+      <span class="font-display text-xl text-ink hidden sm:block">TixTogo</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-ink-soft">
+      <a href="index.html" class="hover:text-ink transition">Événements</a>
+      <a href="recherche.html" class="hover:text-ink transition">Recherche</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="mes-billets.html" class="btn btn-outline btn-sm hidden sm:inline-flex">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+        Mes billets
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== LOGIN SECTION (hidden by default) ===== -->
+<section id="loginSection" class="hidden py-12 sm:py-20">
+  <div class="max-w-md mx-auto px-4 sm:px-6">
+    <div class="text-center mb-8">
+      <div class="eyebrow">Espace personnel</div>
+      <h1 class="font-display text-2xl sm:text-3xl text-ink mt-1">Accédez à vos billets</h1>
+      <p class="text-sm text-ink-soft mt-2">Entrez votre numéro de téléphone pour recevoir vos billets.</p>
+    </div>
+
+    <!-- Option 1: Phone number -->
+    <div class="ticket-card p-6 mb-4">
+      <label class="block text-sm font-medium text-ink mb-2">Numéro de téléphone</label>
+      <div class="flex gap-2">
+        <div class="field flex-1">
+          <input type="tel" placeholder="+228 90 00 00 00" class="w-full px-4 py-3 rounded-lg text-sm" style="border:1.5px solid rgba(27,22,15,0.2);background:var(--color-paper-white);color:var(--color-ink);">
+        </div>
+        <button class="btn btn-primary btn-sm whitespace-nowrap">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
+          Recevoir un code OTP
+        </button>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3 my-6">
+      <div class="flex-1 h-px" style="background:rgba(27,22,15,0.12);"></div>
+      <span class="text-xs text-ink-soft font-mono uppercase tracking-wider">Ou</span>
+      <div class="flex-1 h-px" style="background:rgba(27,22,15,0.12);"></div>
+    </div>
+
+    <!-- Option 2: OTP code -->
+    <div class="ticket-card p-6">
+      <label class="block text-sm font-medium text-ink mb-4">Ou entrez le code reçu par SMS</label>
+      <div class="otp-inputs flex justify-center gap-2 sm:gap-3">
+        <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" aria-label="Chiffre 1">
+        <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" aria-label="Chiffre 2">
+        <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" aria-label="Chiffre 3">
+        <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" aria-label="Chiffre 4">
+        <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" aria-label="Chiffre 5">
+        <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" aria-label="Chiffre 6">
+      </div>
+      <button class="btn btn-primary w-full mt-6">Valider le code</button>
+    </div>
+
+    <!-- Toggle demo -->
+    <div class="text-center mt-6">
+      <button onclick="toggleView()" class="text-xs text-ink-soft underline hover:text-ink transition">Voir la vue connectée (démo)</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT (logged in) ===== -->
+<main id="mainContent">
+  <!-- Welcome Header -->
+  <div class="py-6 sm:py-8" style="background:var(--color-paper-white);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="eyebrow">Espace personnel</div>
+          <h1 class="font-display text-2xl sm:text-3xl text-ink mt-1">Mes billets</h1>
+          <p class="text-sm text-ink-soft mt-1">Bienvenue, <strong class="text-ink">Kofi</strong></p>
+        </div>
+        <div class="w-11 h-11 rounded-full flex items-center justify-center font-display text-lg" style="background:var(--color-amber-pale);color:var(--color-amber-deep);">
+          K
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="sticky top-16 z-40 bg-paper-white" style="border-bottom:1.5px solid rgba(27,22,15,0.10);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex gap-0">
+        <button class="tab-btn tab-active px-4 py-3 text-sm font-medium transition" data-tab="upcoming">
+          À venir
+        </button>
+        <button class="tab-btn px-4 py-3 text-sm font-medium text-ink-soft transition" data-tab="past">
+          Passés
+        </button>
+        <button class="tab-btn px-4 py-3 text-sm font-medium text-ink-soft transition" data-tab="all">
+          Tous
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tickets List -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 pb-24 md:pb-8">
+
+    <!-- Tab: À venir -->
+    <div id="tab-upcoming" class="tab-content space-y-4">
+
+      <!-- Ticket 1: Concert -->
+      <div class="ticket-card overflow-visible">
+        <div class="flex flex-col sm:flex-row">
+          <!-- Event Info -->
+          <div class="ticket-stub-left flex-1 p-5 sm:p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="badge badge-amber text-[10px]">Concert</span>
+              <span class="badge badge-valid text-[10px]">Valide</span>
+            </div>
+            <h3 class="font-display text-lg text-ink leading-snug">Concert — Salle Nyékonakpoè</h3>
+            <p class="text-sm text-ink-soft mt-1">15 Août 2026</p>
+            <p class="text-xs text-ink-soft mt-2">Standard</p>
+          </div>
+          <!-- Stub Divider -->
+          <div class="stub-divider hidden sm:block" style="width:1.5px;background:repeating-linear-gradient(to bottom,rgba(27,22,15,0.15) 0 4px,transparent 4px 8px);margin:0;"></div>
+          <div class="stub-divider sm:hidden" style="height:1.5px;background:repeating-linear-gradient(to right,rgba(27,22,15,0.15) 0 4px,transparent 4px 8px);"></div>
+          <!-- Ticket Code & Price -->
+          <div class="ticket-stub-right flex items-center justify-between sm:flex-col sm:items-center sm:justify-center p-5 sm:p-6 sm:min-w-[180px]">
+            <span class="ticket-code font-mono text-sm sm:text-base">#TX-8834-FL</span>
+            <span class="font-display text-xl sm:text-2xl text-ink">3 000 F</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket 2: Tech Summit -->
+      <div class="ticket-card overflow-visible">
+        <div class="flex flex-col sm:flex-row">
+          <!-- Event Info -->
+          <div class="ticket-stub-left flex-1 p-5 sm:p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="badge badge-valid text-[10px]">Conférence</span>
+              <span class="badge badge-valid text-[10px]">Valide</span>
+            </div>
+            <h3 class="font-display text-lg text-ink leading-snug">Tech Summit Lomé 2026</h3>
+            <p class="text-sm text-ink-soft mt-1">22 Août 2026</p>
+            <p class="text-xs text-ink-soft mt-2">VIP</p>
+          </div>
+          <!-- Stub Divider -->
+          <div class="stub-divider hidden sm:block" style="width:1.5px;background:repeating-linear-gradient(to bottom,rgba(27,22,15,0.15) 0 4px,transparent 4px 8px);margin:0;"></div>
+          <div class="stub-divider sm:hidden" style="height:1.5px;background:repeating-linear-gradient(to right,rgba(27,22,15,0.15) 0 4px,transparent 4px 8px);"></div>
+          <!-- Ticket Code & Price -->
+          <div class="ticket-stub-right flex items-center justify-between sm:flex-col sm:items-center sm:justify-center p-5 sm:p-6 sm:min-w-[180px]">
+            <span class="ticket-code font-mono text-sm sm:text-base">#TX-9912-KG</span>
+            <span class="font-display text-xl sm:text-2xl text-ink">15 000 F</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Passés -->
+    <div id="tab-past" class="tab-content space-y-4 hidden">
+
+      <!-- Ticket 3: Soirée Beach (past, used, reduced opacity) -->
+      <div class="ticket-card overflow-visible" style="opacity:0.55;">
+        <div class="flex flex-col sm:flex-row">
+          <!-- Event Info -->
+          <div class="ticket-stub-left flex-1 p-5 sm:p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="badge badge-amber text-[10px]">Soirée</span>
+              <span class="badge badge-used text-[10px]">Utilisé</span>
+            </div>
+            <h3 class="font-display text-lg text-ink leading-snug">Soirée Beach — Lomé</h3>
+            <p class="text-sm text-ink-soft mt-1">20 Juin 2026</p>
+            <p class="text-xs text-ink-soft mt-2">Standard</p>
+          </div>
+          <!-- Stub Divider -->
+          <div class="stub-divider hidden sm:block" style="width:1.5px;background:repeating-linear-gradient(to bottom,rgba(27,22,15,0.15) 0 4px,transparent 4px 8px);margin:0;"></div>
+          <div class="stub-divider sm:hidden" style="height:1.5px;background:repeating-linear-gradient(to right,rgba(27,22,15,0.15) 0 4px,transparent 4px 8px);"></div>
+          <!-- Ticket Code & Price -->
+          <div class="ticket-stub-right flex items-center justify-between sm:flex-col sm:items-center sm:justify-center p-5 sm:p-6 sm:min-w-[180px]">
+            <span class="ticket-code font-mono text-sm sm:text-base">#TX-7721-BN</span>
+            <span class="font-display text-xl sm:text-2xl text-ink">5 000 F</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Tous -->
+    <div id="tab-all" class="tab-content space-y-4 hidden">
+
+      <!-- Ticket 1: Concert (upcoming) -->
+      <div class="ticket-card overflow-visible">
+        <div class="flex flex-col sm:flex-row">
+          <div class="ticket-stub-left flex-1 p-5 sm:p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="badge badge-amber text-[10px]">Concert</span>
+              <span class="badge badge-valid text-[10px]">Valide</span>
+            </div>
+            <h3 class="font-display text-lg text-ink leading-snug">Concert — Salle Nyékonakpoè</h3>
+            <p class="text-sm text-ink-soft mt-1">15 Août 2026</p>
+            <p class="text-xs text-ink-soft mt-2">Standard</p>
+          </div>
+          <div class="stub-divider hidden sm:block" style="width:1.5px;background:repeating-linear-gradient(to bottom,rgba(27,22,15,0.15) 0 4px,transparent 4px 8px);margin:0;"></div>
+          <div class="stub-divider sm:hidden" style="height:1.5px;background:repeating-linear-gradient(to right,rgba(27,22,15,0.15) 0 4px,transparent 4px 8px);"></div>
+          <div class="ticket-stub-right flex items-center justify-between sm:flex-col sm:items-center sm:justify-center p-5 sm:p-6 sm:min-w-[180px]">
+            <span class="ticket-code font-mono text-sm sm:text-base">#TX-8834-FL</span>
+            <span class="font-display text-xl sm:text-2xl text-ink">3 000 F</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket 2: Tech Summit (upcoming) -->
+      <div class="ticket-card overflow-visible">
+        <div class="flex flex-col sm:flex-row">
+          <div class="ticket-stub-left flex-1 p-5 sm:p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="badge badge-valid text-[10px]">Conférence</span>
+              <span class="badge badge-valid text-[10px]">Valide</span>
+            </div>
+            <h3 class="font-display text-lg text-ink leading-snug">Tech Summit Lomé 2026</h3>
+            <p class="text-sm text-ink-soft mt-1">22 Août 2026</p>
+            <p class="text-xs text-ink-soft mt-2">VIP</p>
+          </div>
+          <div class="stub-divider hidden sm:block" style="width:1.5px;background:repeating-linear-gradient(to bottom,rgba(27,22,15,0.15) 0 4px,transparent 4px 8px);margin:0;"></div>
+          <div class="stub-divider sm:hidden" style="height:1.5px;background:repeating-linear-gradient(to right,rgba(27,22,15,0.15) 0 4px,transparent 4px 8px);"></div>
+          <div class="ticket-stub-right flex items-center justify-between sm:flex-col sm:items-center sm:justify-center p-5 sm:p-6 sm:min-w-[180px]">
+            <span class="ticket-code font-mono text-sm sm:text-base">#TX-9912-KG</span>
+            <span class="font-display text-xl sm:text-2xl text-ink">15 000 F</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket 3: Soirée Beach (past) -->
+      <div class="ticket-card overflow-visible" style="opacity:0.55;">
+        <div class="flex flex-col sm:flex-row">
+          <div class="ticket-stub-left flex-1 p-5 sm:p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="badge badge-amber text-[10px]">Soirée</span>
+              <span class="badge badge-used text-[10px]">Utilisé</span>
+            </div>
+            <h3 class="font-display text-lg text-ink leading-snug">Soirée Beach — Lomé</h3>
+            <p class="text-sm text-ink-soft mt-1">20 Juin 2026</p>
+            <p class="text-xs text-ink-soft mt-2">Standard</p>
+          </div>
+          <div class="stub-divider hidden sm:block" style="width:1.5px;background:repeating-linear-gradient(to bottom,rgba(27,22,15,0.15) 0 4px,transparent 4px 8px);margin:0;"></div>
+          <div class="stub-divider sm:hidden" style="height:1.5px;background:repeating-linear-gradient(to right,rgba(27,22,15,0.15) 0 4px,transparent 4px 8px);"></div>
+          <div class="ticket-stub-right flex items-center justify-between sm:flex-col sm:items-center sm:justify-center p-5 sm:p-6 sm:min-w-[180px]">
+            <span class="ticket-code font-mono text-sm sm:text-base">#TX-7721-BN</span>
+            <span class="font-display text-xl sm:text-2xl text-ink">5 000 F</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty state helper -->
+    <div id="emptyState" class="hidden text-center py-16">
+      <div class="w-16 h-16 mx-auto rounded-2xl bg-paper-soft flex items-center justify-center mb-4">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" class="text-ink-soft"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+      </div>
+      <p class="text-ink-soft text-sm">Aucun billet dans cette catégorie.</p>
+    </div>
+  </div>
+</main>
+
+<!-- Toggle button (visible in logged-in view) -->
+<div id="toggleLoginBtn" class="fixed bottom-20 md:bottom-6 right-4 z-50">
+  <button onclick="toggleView()" class="btn btn-outline btn-sm shadow-lg" style="background:var(--color-paper-white);">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+    <span class="hidden sm:inline">Voir l'état déconnexion</span>
+  </button>
+</div>
+
+<!-- Bottom nav mobile -->
+<nav class="bottom-nav md:hidden">
+  <a href="index.html" class="bottom-nav-item">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    Accueil
+  </a>
+  <a href="recherche.html" class="bottom-nav-item">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    Recherche
+  </a>
+  <a href="mes-billets.html" class="bottom-nav-item active">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+    Billets
+  </a>
+</nav>
+
+<script>
+  // Toggle between login and logged-in view
+  function toggleView() {
+    const loginSection = document.getElementById('loginSection');
+    const mainContent = document.getElementById('mainContent');
+    const toggleBtn = document.getElementById('toggleLoginBtn');
+
+    const isHidden = loginSection.classList.contains('hidden');
+    if (isHidden) {
+      loginSection.classList.remove('hidden');
+      mainContent.classList.add('hidden');
+      toggleBtn.classList.add('hidden');
+    } else {
+      loginSection.classList.add('hidden');
+      mainContent.classList.remove('hidden');
+      toggleBtn.classList.remove('hidden');
+    }
+  }
+
+  // Tab switching
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active from all tabs
+      document.querySelectorAll('.tab-btn').forEach(t => {
+        t.classList.remove('tab-active');
+        t.classList.add('text-ink-soft');
+      });
+      // Set clicked tab active
+      btn.classList.add('tab-active');
+      btn.classList.remove('text-ink-soft');
+
+      // Hide all tab contents
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+      document.getElementById('emptyState').classList.add('hidden');
+
+      // Show selected tab content
+      const tab = btn.getAttribute('data-tab');
+      const content = document.getElementById('tab-' + tab);
+      if (content) {
+        content.classList.remove('hidden');
+        // Show empty state if no tickets
+        if (content.querySelectorAll('.ticket-card').length === 0) {
+          document.getElementById('emptyState').classList.remove('hidden');
+        }
+      }
+    });
+  });
+
+  // OTP input auto-advance
+  document.querySelectorAll('.otp-inputs input').forEach((input, index, inputs) => {
+    input.addEventListener('input', (e) => {
+      if (e.target.value && index < inputs.length - 1) {
+        inputs[index + 1].focus();
+      }
+    });
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace' && !e.target.value && index > 0) {
+        inputs[index - 1].focus();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

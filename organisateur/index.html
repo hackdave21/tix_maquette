@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — TixTogo Organisateur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tixtogo.css">
+</head>
+<body style="background:var(--color-paper);">
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar" id="sidebar">
+  <!-- Logo -->
+  <div class="px-6 mb-8">
+    <a href="index.html" class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-ink rounded-lg flex items-center justify-center">
+        <span class="text-paper-white font-display text-sm font-bold">T</span>
+      </div>
+      <span class="font-display text-lg text-ink">TixTogo</span>
+    </a>
+  </div>
+
+  <!-- Profil -->
+  <div class="px-6 mb-6">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full bg-amber-pale flex items-center justify-center">
+        <span class="font-display text-amber-deep text-sm">JD</span>
+      </div>
+      <div>
+        <div class="text-sm font-semibold text-ink">Jean Dupont</div>
+        <div class="badge badge-valid text-[10px] py-1 px-2">Vérifié</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="flex flex-col gap-1">
+    <a href="index.html" class="sidebar-link active">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Dashboard
+    </a>
+    <a href="evenement-creation.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="12" y1="14" x2="12" y2="18"/><line x1="10" y1="16" x2="14" y2="16"/></svg>
+      Événements
+    </a>
+    <a href="billets.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 5v2m0 4v2m0 4v2M5 5h14a2 2 0 012 2v3a2 2 0 000 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 000-4V7a2 2 0 012-2z"/></svg>
+      Billets
+    </a>
+    <a href="ventes.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      Ventes
+    </a>
+    <a href="equipe.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      Équipe
+    </a>
+    <a href="ambassadeurs.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      Ambassadeurs
+    </a>
+    <a href="points-de-vente.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+      Points de vente
+    </a>
+    <a href="invitations.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Invitations
+    </a>
+    <a href="reversements.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      Reversements
+    </a>
+  </nav>
+
+  <!-- Déconnexion -->
+  <div class="mt-auto px-6 pt-6">
+    <a href="#" class="sidebar-link" style="color:var(--color-red-custom);">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Déconnexion
+    </a>
+  </div>
+</aside>
+
+<!-- Sidebar overlay mobile -->
+<div class="fixed inset-0 bg-ink/40 z-40 hidden" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="min-h-screen md:ml-[260px]">
+  <!-- Header mobile + desktop -->
+  <header class="bg-paper-white sticky top-0 z-30" style="border-bottom:1.5px solid rgba(27,22,15,0.12);">
+    <div class="flex items-center justify-between px-4 md:px-8 h-16">
+      <div class="flex items-center gap-3">
+        <!-- Hamburger mobile -->
+        <button onclick="toggleSidebar()" class="md:hidden p-2 -ml-2 rounded-lg hover:bg-paper-soft transition">
+          <svg class="w-5 h-5 text-ink" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h1 class="font-display text-xl text-ink">Dashboard</h1>
+      </div>
+      <a href="evenement-creation.html" class="btn btn-primary btn-sm">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        <span class="hidden sm:inline">Créer un événement</span>
+        <span class="sm:hidden">Créer</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Contenu -->
+  <div class="p-4 md:p-8">
+
+    <!-- KPI Cards -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <!-- Billets vendus -->
+      <div class="kpi-card">
+        <div class="flex items-center gap-2 mb-2">
+          <div class="w-8 h-8 rounded-lg bg-teal-pale flex items-center justify-center">
+            <svg class="w-4 h-4 text-teal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 5v2m0 4v2m0 4v2M5 5h14a2 2 0 012 2v3a2 2 0 000 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 000-4V7a2 2 0 012-2z"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value font-display text-2xl lg:text-3xl text-ink">1 247</div>
+        <div class="stub-divider" style="margin:8px 0;"></div>
+        <div class="kpi-label text-xs text-ink-soft">Billets vendus</div>
+      </div>
+
+      <!-- Chiffre d'affaires -->
+      <div class="kpi-card">
+        <div class="flex items-center gap-2 mb-2">
+          <div class="w-8 h-8 rounded-lg bg-amber-pale flex items-center justify-center">
+            <svg class="w-4 h-4 text-amber-deep" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value font-display text-2xl lg:text-3xl text-ink">4.2M F</div>
+        <div class="stub-divider" style="margin:8px 0;"></div>
+        <div class="kpi-label text-xs text-ink-soft">Chiffre d'affaires</div>
+      </div>
+
+      <!-- Événements actifs -->
+      <div class="kpi-card">
+        <div class="flex items-center gap-2 mb-2">
+          <div class="w-8 h-8 rounded-lg bg-paper-soft flex items-center justify-center">
+            <svg class="w-4 h-4 text-ink-soft" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value font-display text-2xl lg:text-3xl text-ink">3</div>
+        <div class="stub-divider" style="margin:8px 0;"></div>
+        <div class="kpi-label text-xs text-ink-soft">Événements actifs</div>
+      </div>
+
+      <!-- Taux de présence -->
+      <div class="kpi-card">
+        <div class="flex items-center gap-2 mb-2">
+          <div class="w-8 h-8 rounded-lg bg-teal-pale flex items-center justify-center">
+            <svg class="w-4 h-4 text-teal" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value font-display text-2xl lg:text-3xl text-ink">89%</div>
+        <div class="stub-divider" style="margin:8px 0;"></div>
+        <div class="kpi-label text-xs text-ink-soft">Taux de présence</div>
+      </div>
+    </div>
+
+    <!-- Events Table -->
+    <div class="ticket-card mb-8">
+      <div class="flex items-center justify-between p-4 pb-0">
+        <h2 class="font-display text-lg text-ink">Événements</h2>
+        <a href="evenement-creation.html" class="text-sm text-amber-deep font-semibold hover:underline">Tout voir</a>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="data-table w-full">
+          <thead>
+            <tr>
+              <th class="text-left">Événement</th>
+              <th class="text-left">Date</th>
+              <th class="text-left">Billets vendus</th>
+              <th class="text-left">CA</th>
+              <th class="text-left">Statut</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-lg bg-amber-pale flex items-center justify-center flex-shrink-0">
+                    <span class="font-display text-amber-deep text-xs">CN</span>
+                  </div>
+                  <span class="font-semibold text-ink">Concert Nyékonakpoè</span>
+                </div>
+              </td>
+              <td class="text-ink-soft font-mono text-sm">15 Août</td>
+              <td>
+                <span class="font-mono text-sm text-ink">847</span>
+                <span class="text-ink-soft font-mono text-sm">/1200</span>
+              </td>
+              <td class="font-mono text-sm text-ink font-semibold">2.5M F</td>
+              <td><span class="badge badge-valid">Publié</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-lg bg-teal-pale flex items-center justify-center flex-shrink-0">
+                    <span class="font-display text-teal text-xs">TS</span>
+                  </div>
+                  <span class="font-semibold text-ink">Tech Summit</span>
+                </div>
+              </td>
+              <td class="text-ink-soft font-mono text-sm">22 Août</td>
+              <td>
+                <span class="font-mono text-sm text-ink">400</span>
+                <span class="text-ink-soft font-mono text-sm">/500</span>
+              </td>
+              <td class="font-mono text-sm text-ink font-semibold">1.7M F</td>
+              <td><span class="badge badge-valid">Publié</span></td>
+            </tr>
+            <tr>
+              <td>
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-lg bg-red-pale flex items-center justify-center flex-shrink-0">
+                    <span class="font-display text-red-custom text-xs">BP</span>
+                  </div>
+                  <span class="font-semibold text-ink">Beach Party</span>
+                </div>
+              </td>
+              <td class="text-ink-soft font-mono text-sm">30 Août</td>
+              <td>
+                <span class="font-mono text-sm text-ink">0</span>
+                <span class="text-ink-soft font-mono text-sm">/800</span>
+              </td>
+              <td class="font-mono text-sm text-ink font-semibold">0 F</td>
+              <td><span class="badge badge-amber">Brouillon</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Channel Breakdown -->
+    <div class="ticket-card">
+      <div class="p-4 pb-0">
+        <h2 class="font-display text-lg text-ink mb-1">Ventilation par canal</h2>
+        <p class="text-sm text-ink-soft">Répartition des ventes sur tous les canaux</p>
+      </div>
+      <div class="p-4 space-y-4">
+        <!-- Web -->
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <div class="flex items-center gap-2">
+              <div class="w-2.5 h-2.5 rounded-full" style="background:var(--color-amber);"></div>
+              <span class="text-sm font-medium text-ink">Web</span>
+            </div>
+            <span class="font-mono text-sm text-ink font-semibold">65%</span>
+          </div>
+          <div class="h-2.5 rounded-full bg-paper-soft overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-500" style="width:65%;background:var(--color-amber);"></div>
+          </div>
+        </div>
+
+        <!-- WhatsApp -->
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <div class="flex items-center gap-2">
+              <div class="w-2.5 h-2.5 rounded-full" style="background:var(--color-teal);"></div>
+              <span class="text-sm font-medium text-ink">WhatsApp</span>
+            </div>
+            <span class="font-mono text-sm text-ink font-semibold">20%</span>
+          </div>
+          <div class="h-2.5 rounded-full bg-paper-soft overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-500" style="width:20%;background:var(--color-teal);"></div>
+          </div>
+        </div>
+
+        <!-- Ambassadeurs -->
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <div class="flex items-center gap-2">
+              <div class="w-2.5 h-2.5 rounded-full" style="background:var(--color-red-custom);"></div>
+              <span class="text-sm font-medium text-ink">Ambassadeurs</span>
+            </div>
+            <span class="font-mono text-sm text-ink font-semibold">10%</span>
+          </div>
+          <div class="h-2.5 rounded-full bg-paper-soft overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-500" style="width:10%;background:var(--color-red-custom);"></div>
+          </div>
+        </div>
+
+        <!-- Points de vente -->
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <div class="flex items-center gap-2">
+              <div class="w-2.5 h-2.5 rounded-full" style="background:var(--color-ink);"></div>
+              <span class="text-sm font-medium text-ink">Points de vente</span>
+            </div>
+            <span class="font-mono text-sm text-ink font-semibold">5%</span>
+          </div>
+          <div class="h-2.5 rounded-full bg-paper-soft overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-500" style="width:5%;background:var(--color-ink);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script>
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  sidebar.classList.toggle('open');
+  overlay.classList.toggle('hidden');
+}
+</script>
+
+</body>
+</html>

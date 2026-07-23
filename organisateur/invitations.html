@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitations | TixTogo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tixtogo.css">
+</head>
+<body style="display:flex;">
+<aside class="sidebar">
+  <div class="px-6 mb-8"><a href="index.html" class="flex items-center gap-2"><div class="w-8 h-8 bg-ink rounded-lg flex items-center justify-center"><span class="text-paper-white font-display text-sm font-bold">T</span></div><span class="font-display text-lg text-ink">TixTogo</span></a></div>
+  <div class="px-6 mb-6"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-amber-pale flex items-center justify-center"><span class="font-display text-amber-deep text-sm">JD</span></div><div><div class="text-sm font-semibold text-ink">Jean Dupont</div><div class="badge badge-valid text-[10px] py-1 px-2">Vérifié</div></div></div></div>
+  <nav class="flex flex-col gap-1">
+    <a href="index.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</a>
+    <a href="evenement-creation.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Événements</a>
+    <a href="billets.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 5v2m0 4v2m0 4v2M5 5h14a2 2 0 012 2v3a2 2 0 000 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 000-4V7a2 2 0 012-2z"/></svg>Billets</a>
+    <a href="ventes.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Ventes</a>
+    <a href="equipe.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Équipe</a>
+    <a href="ambassadeurs.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Ambassadeurs</a>
+    <a href="points-de-vente.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Points de vente</a>
+    <a href="invitations.html" class="sidebar-link active"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Invitations</a>
+    <a href="reversements.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Reversements</a>
+  </nav>
+  <div class="mt-8 px-6"><a href="#" class="sidebar-link" style="color:var(--color-red-custom);"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Déconnexion</a></div>
+</aside>
+
+<main class="flex-1 ml-[260px] p-8 max-md:ml-0 max-md:p-4">
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <div class="eyebrow">Gestion des invités</div>
+      <h1 class="font-display text-2xl text-ink mt-1">Invitations</h1>
+    </div>
+    <div class="flex gap-2">
+      <button class="btn btn-outline btn-sm">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        Importer CSV
+      </button>
+      <button onclick="document.getElementById('add-invite').classList.toggle('hidden')" class="btn btn-primary btn-sm">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Nouvelle invitation
+      </button>
+    </div>
+  </div>
+
+  <!-- Event selector -->
+  <div class="ticket-card p-4 mb-6"><div class="field mb-0"><label>Événement</label><select><option>Concert — Salle Nyékonakpoè</option></select></div></div>
+
+  <!-- Add form -->
+  <div id="add-invite" class="ticket-card p-5 mb-6 hidden">
+    <h3 class="font-display text-lg text-ink mb-4">Émettre une invitation</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="field"><label>Nom de l'invité</label><input type="text" placeholder="Nom complet"></div>
+      <div class="field"><label>Contact</label><input type="text" placeholder="Téléphone ou email"></div>
+      <div class="field"><label>Type</label>
+        <select><option>VIP invité</option><option>Presse</option><option>Artiste</option><option>Sponsor</option><option>Staff</option><option>Partenaire</option><option>Influenceur</option></select>
+      </div>
+      <div class="field"><label>&nbsp;</label><button class="btn btn-primary w-full justify-center">Émettre</button></div>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+    <div class="kpi-card"><div class="kpi-value text-ink text-2xl">45</div><div class="stub-divider on-paper" style="margin:6px 0;"></div><div class="kpi-label">Invitations émises</div></div>
+    <div class="kpi-card"><div class="kpi-value text-ink text-2xl">32</div><div class="stub-divider on-paper" style="margin:6px 0;"></div><div class="kpi-label">Utilisées</div></div>
+    <div class="kpi-card"><div class="kpi-value text-ink text-2xl">8</div><div class="stub-divider on-paper" style="margin:6px 0;"></div><div class="kpi-label">En attente</div></div>
+    <div class="kpi-card"><div class="kpi-value text-ink text-2xl">5</div><div class="stub-divider on-paper" style="margin:6px 0;"></div><div class="kpi-label">Annulées</div></div>
+  </div>
+
+  <!-- Invitations table -->
+  <div class="ticket-card overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="data-table">
+        <thead><tr><th>Invité</th><th>Type</th><th>Contact</th><th>QR Token</th><th>Statut</th><th>Utilisé le</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="font-semibold text-sm">Hon. Gnama Latta</td>
+            <td><span class="badge badge-amber text-[10px]">VIP invité</span></td>
+            <td class="text-sm text-ink-soft">+228 90 11 22 33</td>
+            <td><span class="ticket-code">INV-NP-V001</span></td>
+            <td><span class="flex items-center gap-1 text-sm"><span class="status-dot status-dot-green"></span>Utilisée</span></td>
+            <td class="text-sm text-ink-soft">15/08 20:14</td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-sm">Togo Presse</td>
+            <td><span class="badge badge-outline text-[10px]">Presse</span></td>
+            <td class="text-sm text-ink-soft">redaction@togopresse.tg</td>
+            <td><span class="ticket-code">INV-NP-P001</span></td>
+            <td><span class="flex items-center gap-1 text-sm"><span class="status-dot status-dot-green"></span>Utilisée</span></td>
+            <td class="text-sm text-ink-soft">15/08 19:45</td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-sm">DJ Yvon</td>
+            <td><span class="badge badge-valid text-[10px]">Artiste</span></td>
+            <td class="text-sm text-ink-soft">+228 91 33 44 55</td>
+            <td><span class="ticket-code">INV-NP-A001</span></td>
+            <td><span class="flex items-center gap-1 text-sm"><span class="status-dot status-dot-amber"></span>Émise</span></td>
+            <td class="text-sm text-ink-soft">—</td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-sm">Togocel</td>
+            <td><span class="badge badge-amber text-[10px]">Sponsor</span></td>
+            <td class="text-sm text-ink-soft">marketing@togocel.tg</td>
+            <td><span class="ticket-code">INV-NP-S001</span></td>
+            <td><span class="flex items-center gap-1 text-sm"><span class="status-dot status-dot-amber"></span>Émise</span></td>
+            <td class="text-sm text-ink-soft">—</td>
+          </tr>
+          <tr>
+            <td class="font-semibold text-sm">Mme Agbé</td>
+            <td><span class="badge badge-outline text-[10px]">Staff</span></td>
+            <td class="text-sm text-ink-soft">+228 92 55 66 77</td>
+            <td><span class="ticket-code">INV-NP-ST01</span></td>
+            <td><span class="flex items-center gap-1 text-sm"><span class="status-dot status-dot-red"></span>Annulée</span></td>
+            <td class="text-sm text-ink-soft">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+</body>
+</html>

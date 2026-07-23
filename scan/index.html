@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#FFFCF6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>TixTogo — Contrôle d'accès</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tixtogo.css">
+<style>
+  :root{
+    --ink:#1B160F;
+    --ink-soft:#5C5344;
+    --paper:#F2E8D4;
+    --paper-soft:#F9F3E6;
+    --paper-white:#FFFCF6;
+    --amber:#E8A33D;
+    --amber-deep:#C97F1E;
+    --amber-pale:#FBE6BE;
+    --teal:#1C7A6B;
+    --teal-pale:#DCEFE9;
+    --line:rgba(27,22,15,0.16);
+    --line-strong:rgba(27,22,15,0.30);
+    --radius-card:18px;
+    --radius-ctrl:10px;
+    --shadow-card:0 1px 0 rgba(27,22,15,0.06);
+    --font-display:'Archivo Black','Archivo',sans-serif;
+    --font-body:'Archivo',sans-serif;
+    --font-mono:'IBM Plex Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;overflow:hidden;}
+  body{
+    background:var(--paper-white);
+    color:var(--ink);
+    font-family:var(--font-body);
+    -webkit-font-smoothing:antialiased;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:100dvh;
+    padding:24px;
+    text-align:center;
+  }
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;margin:0;}
+
+  .scan-shell{
+    width:100%;
+    max-width:400px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:28px;
+  }
+
+  .logo{
+    width:64px;height:64px;
+    background:var(--ink);
+    border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--paper-white);
+    font-family:var(--font-display);
+    font-size:32px;
+    flex-shrink:0;
+  }
+
+  .scan-shell h1{
+    font-size:24px;
+    line-height:1.2;
+    letter-spacing:0.2px;
+  }
+
+  .field{width:100%;text-align:left;}
+  .field label{
+    display:block;
+    font-family:var(--font-mono);
+    font-size:11px;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+  }
+  .field select{
+    width:100%;
+    padding:14px 16px;
+    border-radius:var(--radius-ctrl);
+    border:1.5px solid var(--line-strong);
+    background:var(--paper-soft);
+    font-family:var(--font-body);
+    font-size:15px;
+    font-weight:600;
+    color:var(--ink);
+    appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%235C5344' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 16px center;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .field select:focus{
+    outline:none;
+    border-color:var(--amber);
+    box-shadow:0 0 0 3px var(--amber-pale);
+  }
+
+  .staff-card{
+    width:100%;
+    background:var(--paper-white);
+    border:1.5px solid var(--line);
+    border-radius:var(--radius-card);
+    padding:16px 18px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    box-shadow:var(--shadow-card);
+    text-align:left;
+  }
+  .staff-avatar{
+    width:40px;height:40px;
+    border-radius:50%;
+    background:var(--amber-pale);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-display);
+    font-size:16px;
+    color:var(--amber-deep);
+    flex-shrink:0;
+  }
+  .staff-name{
+    font-size:14px;
+    font-weight:700;
+    line-height:1.3;
+  }
+  .staff-role{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-top:1px;
+  }
+
+  .btn-primary{
+    width:100%;
+    padding:18px 24px;
+    border:none;
+    border-radius:var(--radius-card);
+    background:var(--amber);
+    color:var(--ink);
+    font-family:var(--font-display);
+    font-size:17px;
+    cursor:pointer;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    -webkit-tap-highlight-color:transparent;
+    transition:background 0.15s;
+  }
+  .btn-primary:hover{background:var(--amber-deep);}
+  .btn-primary:active{transform:scale(0.98);}
+
+  .btn-primary svg{
+    width:20px;height:20px;
+    flex-shrink:0;
+  }
+
+  .connectivity{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--font-mono);
+    font-size:12px;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--teal);
+  }
+  .connectivity .dot{
+    width:8px;height:8px;
+    border-radius:50%;
+    background:var(--teal);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;}
+    50%{opacity:0.4;}
+  }
+</style>
+</head>
+<body>
+
+<div class="scan-shell">
+
+  <div class="logo" aria-hidden="true">T</div>
+
+  <h1>Contrôle d'accès</h1>
+
+  <div class="field">
+    <label for="event-select">Événement</label>
+    <select id="event-select">
+      <option>Concert — Salle Nyékonakpoè (15 Août 2026)</option>
+      <option>Tech Summit Lomé 2026 (22 Août 2026)</option>
+    </select>
+  </div>
+
+  <div class="staff-card">
+    <div class="staff-avatar">AK</div>
+    <div>
+      <div class="staff-name">Amavi Kpodar — Manager</div>
+      <div class="staff-role">Agent accrédité</div>
+    </div>
+  </div>
+
+  <a href="scanner.html" class="btn-primary">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h3"/><path d="M17 3h3v3"/><path d="M20 17v3h-3"/><path d="M7 20H4v-3"/><line x1="4" y1="12" x2="20" y2="12"/></svg>
+    Lancer le scan
+  </a>
+
+  <div class="connectivity">
+    <span class="dot"></span>
+    En ligne
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billets — TixTogo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tixtogo.css">
+</head>
+<body style="background:var(--color-paper);display:flex;">
+
+<!-- SIDEBAR ORGANISATEUR -->
+<aside class="sidebar">
+  <div class="px-6 mb-8">
+    <a href="../organisateur/index.html" class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-ink rounded-lg flex items-center justify-center">
+        <span class="text-paper-white font-display text-sm font-bold">T</span>
+      </div>
+      <span class="font-display text-lg text-ink">TixTogo</span>
+    </a>
+  </div>
+
+  <div class="px-6 mb-6">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full bg-amber-pale flex items-center justify-center">
+        <span class="font-display text-amber-deep text-sm">JD</span>
+      </div>
+      <div>
+        <div class="text-sm font-semibold text-ink">Jean Dupont</div>
+        <div class="badge badge-valid text-[10px] py-1 px-2">Vérifié</div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="flex flex-col gap-1">
+    <a href="index.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Dashboard
+    </a>
+    <a href="evenement-creation.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="12" y1="14" x2="12" y2="18"/><line x1="10" y1="16" x2="14" y2="16"/></svg>
+      Événements
+    </a>
+    <a href="billets.html" class="sidebar-link active">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 5v2m0 4v2m0 4v2M5 5h14a2 2 0 012 2v3a2 2 0 000 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 000-4V7a2 2 0 012-2z"/></svg>
+      Billets
+    </a>
+    <a href="ventes.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      Ventes
+    </a>
+    <a href="equipe.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      Équipe
+    </a>
+    <a href="ambassadeurs.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      Ambassadeurs
+    </a>
+    <a href="points-de-vente.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+      Points de vente
+    </a>
+    <a href="invitations.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Invitations
+    </a>
+    <a href="reversements.html" class="sidebar-link">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      Reversements
+    </a>
+  </nav>
+
+  <div class="mt-8 px-6">
+    <a href="#" class="sidebar-link text-red-custom" style="color:var(--color-red-custom);">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      Déconnexion
+    </a>
+  </div>
+</aside>
+
+<!-- CONTENU PRINCIPAL -->
+<main class="flex-1 ml-[260px] p-8 pb-24">
+
+  <!-- Header -->
+  <div class="flex items-center justify-between mb-6">
+    <h1 class="font-display text-2xl text-ink">Catégories de billets</h1>
+    <button class="btn btn-primary" onclick="var f=document.getElementById('addCategoryForm');f.style.display=f.style.display==='none'?'block':'none'">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Ajouter une catégorie
+    </button>
+  </div>
+
+  <!-- Sélecteur d'événement -->
+  <div class="mb-8">
+    <div class="field" style="max-width:400px;margin-bottom:0;">
+      <label>Événement</label>
+      <select>
+        <option selected>Concert — Salle Nyékonakpoè</option>
+        <option>Match Togo — Stade de Kégué</option>
+        <option>Festival Éwé — Palais des Congrès</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Liste des catégories -->
+  <div class="flex flex-col gap-6">
+
+    <!-- CATÉGORIE 1 : Standard -->
+    <div class="ticket-card">
+      <div class="p-5">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-3">
+            <h3 class="font-display text-lg text-ink">Standard</h3>
+            <span class="badge badge-valid">Actif</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="btn btn-outline btn-sm">Modifier</button>
+            <button class="btn btn-outline btn-sm" style="color:var(--color-red-custom);border-color:var(--color-red-custom);">Désactiver</button>
+          </div>
+        </div>
+        <div class="flex items-center gap-6 text-sm text-ink-soft">
+          <span>Prix unitaire</span>
+          <span>Fenêtre de vente</span>
+        </div>
+        <div class="flex items-center gap-6 mt-1">
+          <span class="font-display text-xl text-ink">3 000 F</span>
+          <span class="font-mono text-sm text-ink-soft">01/07/2026 — 15/08/2026</span>
+        </div>
+      </div>
+
+      <div class="stub-divider"></div>
+
+      <div class="p-5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-8">
+            <div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-ink-soft mb-1">Total</div>
+              <div class="font-display text-lg text-ink">500</div>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-ink-soft mb-1">Vendus</div>
+              <div class="font-display text-lg text-amber-deep">347</div>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-ink-soft mb-1">Restants</div>
+              <div class="font-display text-lg text-teal">153</div>
+            </div>
+          </div>
+          <div class="w-32">
+            <div class="h-2 bg-paper-soft rounded-full overflow-hidden">
+              <div class="h-full bg-amber rounded-full" style="width:69.4%"></div>
+            </div>
+            <div class="font-mono text-[10px] text-ink-soft text-right mt-1">69,4 %</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATÉGORIE 2 : VIP -->
+    <div class="ticket-card">
+      <div class="p-5">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-3">
+            <h3 class="font-display text-lg text-ink">VIP</h3>
+            <span class="badge badge-valid">Actif</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="btn btn-outline btn-sm">Modifier</button>
+            <button class="btn btn-outline btn-sm" style="color:var(--color-red-custom);border-color:var(--color-red-custom);">Désactiver</button>
+          </div>
+        </div>
+        <div class="flex items-center gap-6 text-sm text-ink-soft">
+          <span>Prix unitaire</span>
+          <span>Fenêtre de vente</span>
+        </div>
+        <div class="flex items-center gap-6 mt-1">
+          <span class="font-display text-xl text-ink">10 000 F</span>
+          <span class="font-mono text-sm text-ink-soft">01/07/2026 — 15/08/2026</span>
+        </div>
+      </div>
+
+      <div class="stub-divider"></div>
+
+      <div class="p-5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-8">
+            <div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-ink-soft mb-1">Total</div>
+              <div class="font-display text-lg text-ink">100</div>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-ink-soft mb-1">Vendus</div>
+              <div class="font-display text-lg text-amber-deep">72</div>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-ink-soft mb-1">Restants</div>
+              <div class="font-display text-lg text-teal">28</div>
+            </div>
+          </div>
+          <div class="w-32">
+            <div class="h-2 bg-paper-soft rounded-full overflow-hidden">
+              <div class="h-full bg-amber rounded-full" style="width:72%"></div>
+            </div>
+            <div class="font-mono text-[10px] text-ink-soft text-right mt-1">72 %</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATÉGORIE 3 : Early Bird -->
+    <div class="ticket-card" style="opacity:0.75;">
+      <div class="p-5">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-3">
+            <h3 class="font-display text-lg text-ink">Early Bird</h3>
+            <span class="badge badge-used">Épuisé</span>
+            <span class="badge badge-amber">Fenêtre expirée</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="btn btn-outline btn-sm">Modifier</button>
+          </div>
+        </div>
+        <div class="flex items-center gap-6 text-sm text-ink-soft">
+          <span>Prix unitaire</span>
+          <span>Fenêtre de vente</span>
+        </div>
+        <div class="flex items-center gap-6 mt-1">
+          <span class="font-display text-xl text-ink">2 000 F</span>
+          <span class="font-mono text-sm text-ink-soft">01/06/2026 — 30/06/2026</span>
+        </div>
+      </div>
+
+      <div class="stub-divider"></div>
+
+      <div class="p-5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-8">
+            <div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-ink-soft mb-1">Total</div>
+              <div class="font-display text-lg text-ink">200</div>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-ink-soft mb-1">Vendus</div>
+              <div class="font-display text-lg text-red-custom">200</div>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] uppercase tracking-wider text-ink-soft mb-1">Restants</div>
+              <div class="font-display text-lg text-ink-soft">0</div>
+            </div>
+          </div>
+          <div class="w-32">
+            <div class="h-2 bg-paper-soft rounded-full overflow-hidden">
+              <div class="h-full bg-red-custom rounded-full" style="width:100%"></div>
+            </div>
+            <div class="font-mono text-[10px] text-ink-soft text-right mt-1">100 %</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FORMULAIRE : Ajouter une catégorie -->
+  <div id="addCategoryForm" class="mt-8 p-6 bg-paper-white rounded-2xl border border-[#1b160f29]" style="display:none;">
+    <h2 class="font-display text-lg text-ink mb-4">Ajouter une catégorie</h2>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="field">
+        <label for="catName">Nom de la catégorie</label>
+        <input type="text" id="catName" placeholder="Ex : Standard, VIP…">
+      </div>
+      <div class="field">
+        <label for="catPrice">Prix (F CFA)</label>
+        <input type="number" id="catPrice" placeholder="Ex : 3000">
+      </div>
+      <div class="field">
+        <label for="catQty">Quantité totale</label>
+        <input type="number" id="catQty" placeholder="Ex : 500">
+      </div>
+      <div class="field">
+        <label for="catPerPerson">Limite par personne</label>
+        <input type="number" id="catPerPerson" placeholder="Ex : 4">
+      </div>
+      <div class="field">
+        <label for="catStart">Début des ventes</label>
+        <input type="date" id="catStart" value="2026-07-01">
+      </div>
+      <div class="field">
+        <label for="catEnd">Fin des ventes</label>
+        <input type="date" id="catEnd" value="2026-08-15">
+      </div>
+    </div>
+    <div class="flex items-center justify-end gap-3 mt-4">
+      <button class="btn btn-outline btn-sm" onclick="document.getElementById('addCategoryForm').style.display='none'">Annuler</button>
+      <button class="btn btn-primary btn-sm">Enregistrer la catégorie</button>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

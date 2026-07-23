@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historique ventes | TixTogo POS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tixtogo.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="bg-paper-white sticky top-0 z-50" style="border-bottom:1.5px solid rgba(27,22,15,0.16);">
+  <div class="max-w-lg mx-auto px-4 flex items-center justify-between h-14">
+    <a href="index.html" class="flex items-center gap-2">
+      <div class="w-7 h-7 bg-ink rounded-lg flex items-center justify-center">
+        <span class="text-paper-white font-display text-xs font-bold">T</span>
+      </div>
+      <span class="font-display text-base text-ink">POS</span>
+    </a>
+    <span class="text-sm text-ink-soft">Sena Dogbe</span>
+  </div>
+</header>
+
+<div class="max-w-lg mx-auto px-4 py-6 pb-24">
+  <!-- Title -->
+  <h1 class="font-display text-xl text-ink mb-4">Historique des ventes</h1>
+
+  <!-- Date filter -->
+  <div class="flex gap-2 mb-5">
+    <button class="btn btn-primary btn-sm">Aujourd'hui</button>
+    <button class="btn btn-outline btn-sm">Cette semaine</button>
+    <button class="btn btn-outline btn-sm">Ce mois</button>
+  </div>
+
+  <!-- Summary -->
+  <div class="grid grid-cols-2 gap-3 mb-5">
+    <div class="ticket-card p-4 text-center">
+      <p class="font-display text-2xl text-ink">28</p>
+      <p class="font-mono text-[10px] uppercase tracking-wider text-ink-soft mt-1">Ventes</p>
+    </div>
+    <div class="ticket-card p-4 text-center">
+      <p class="font-display text-2xl text-ink">84 000 F</p>
+      <p class="font-mono text-[10px] uppercase tracking-wider text-ink-soft mt-1">Encaissé</p>
+    </div>
+  </div>
+
+  <!-- Payment breakdown -->
+  <div class="ticket-card p-4 mb-5">
+    <h3 class="font-mono text-xs uppercase tracking-wider text-ink-soft mb-3">Par mode de paiement</h3>
+    <div class="space-y-2">
+      <div class="flex items-center justify-between">
+        <span class="text-sm text-ink">Espèces</span>
+        <span class="text-sm font-semibold text-ink">22 ventes — 66 000 F</span>
+      </div>
+      <div class="flex items-center justify-between">
+        <span class="text-sm text-ink">Mobile Money</span>
+        <span class="text-sm font-semibold text-ink">6 ventes — 18 000 F</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sales list -->
+  <h3 class="font-mono text-xs uppercase tracking-wider text-ink-soft mb-3">Transactions</h3>
+  <div class="space-y-3">
+    <div class="ticket-card p-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-teal"></span>
+          <div>
+            <p class="text-sm font-semibold text-ink">Standard × 2</p>
+            <p class="text-xs text-ink-soft">Espèces</p>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-sm font-semibold text-ink">6 000 F</p>
+          <p class="text-xs text-ink-soft font-mono">14:32</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ticket-card p-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-teal"></span>
+          <div>
+            <p class="text-sm font-semibold text-ink">VIP × 1</p>
+            <p class="text-xs text-ink-soft">Mobile Money</p>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-sm font-semibold text-ink">10 000 F</p>
+          <p class="text-xs text-ink-soft font-mono">14:15</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ticket-card p-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-teal"></span>
+          <div>
+            <p class="text-sm font-semibold text-ink">Standard × 1</p>
+            <p class="text-xs text-ink-soft">Espèces</p>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-sm font-semibold text-ink">3 000 F</p>
+          <p class="text-xs text-ink-soft font-mono">13:58</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ticket-card p-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-teal"></span>
+          <div>
+            <p class="text-sm font-semibold text-ink">Groupe × 3</p>
+            <p class="text-xs text-ink-soft">Espèces</p>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-sm font-semibold text-ink">7 500 F</p>
+          <p class="text-xs text-ink-soft font-mono">13:42</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ticket-card p-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 rounded-full bg-teal"></span>
+          <div>
+            <p class="text-sm font-semibold text-ink">Standard × 1</p>
+            <p class="text-xs text-ink-soft">Mobile Money</p>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-sm font-semibold text-ink">3 000 F</p>
+          <p class="text-xs text-ink-soft font-mono">13:20</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav" style="border-radius:16px 16px 0 0;">
+  <a href="index.html" class="bottom-nav-item">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 5v2m0 4v2m0 4v2M5 5h14a2 2 0 012 2v3a2 2 0 000 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 000-4V7a2 2 0 012-2z"/></svg>
+    Vendre
+  </a>
+  <a href="ventes.html" class="bottom-nav-item active">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    Historique
+  </a>
+  <a href="#" class="bottom-nav-item">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    Profil
+  </a>
+</nav>
+
+</body>
+</html>

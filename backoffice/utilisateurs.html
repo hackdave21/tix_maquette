@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utilisateurs | TixTogo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tixtogo.css">
+</head>
+<body style="display:flex;">
+<aside class="sidebar">
+  <div class="px-6 mb-8"><a href="index.html" class="flex items-center gap-2"><div class="w-8 h-8 bg-ink rounded-lg flex items-center justify-center"><span class="text-paper-white font-display text-sm font-bold">T</span></div><span class="font-display text-lg text-ink">TixTogo</span></a><div class="mt-2"><span class="badge badge-outline">Admin</span></div></div>
+  <div class="px-6 mb-6"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-ink flex items-center justify-center"><span class="text-paper-white font-display text-sm">AT</span></div><div><div class="text-sm font-semibold text-ink">Admin TixTogo</div><div class="text-xs text-ink-soft">Super administrateur</div></div></div></div>
+  <nav class="flex flex-col gap-1">
+    <a href="index.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</a>
+    <a href="kyc.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>Validation KYC</a>
+    <a href="commissions.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>Commissions</a>
+    <a href="moderation.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Modération</a>
+    <a href="paiements.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>Paiements</a>
+    <a href="remboursements.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>Remboursements</a>
+    <a href="utilisateurs.html" class="sidebar-link active"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Utilisateurs</a>
+    <a href="audit.html" class="sidebar-link"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Audit</a>
+  </nav>
+  <div class="mt-8 px-6"><a href="#" class="sidebar-link" style="color:var(--color-red-custom);"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Déconnexion</a></div>
+</aside>
+
+<main class="flex-1 ml-[260px] p-8 max-md:ml-0 max-md:p-4">
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <div class="eyebrow">Gestion</div>
+      <h1 class="font-display text-2xl text-ink mt-1">Utilisateurs et rôles</h1>
+    </div>
+    <div class="flex gap-2">
+      <input type="text" placeholder="Rechercher..." class="btn btn-outline btn-sm" style="width:200px;border-radius:999px;padding:8px 16px;">
+    </div>
+  </div>
+
+  <!-- User list -->
+  <div class="ticket-card overflow-hidden">
+    <table class="data-table">
+      <thead><tr><th>Identité</th><th>Téléphone</th><th>Rôles</th><th>Inscrit le</th><th>Actions</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-amber-pale flex items-center justify-center"><span class="font-display text-amber-deep text-xs">JD</span></div>
+              <div><p class="font-semibold text-sm">Jean Dupont</p><p class="text-xs text-ink-soft">jean@eventpro.tg</p></div>
+            </div>
+          </td>
+          <td class="text-sm">+228 91 23 45 67</td>
+          <td><div class="flex gap-1 flex-wrap"><span class="badge badge-valid text-[9px]">Acheteur</span><span class="badge badge-amber text-[9px]">Organisateur</span></div></td>
+          <td class="text-sm text-ink-soft">01/06/2026</td>
+          <td><button class="btn btn-outline btn-sm">Gérer</button></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-teal-pale flex items-center justify-center"><span class="font-display text-teal text-xs">AK</span></div>
+              <div><p class="font-semibold text-sm">Amavi Kpodar</p><p class="text-xs text-ink-soft">amavi@mail.tg</p></div>
+            </div>
+          </td>
+          <td class="text-sm">+228 90 11 22 33</td>
+          <td><div class="flex gap-1 flex-wrap"><span class="badge badge-valid text-[9px]">Acheteur</span><span class="badge badge-outline text-[9px]">Manager</span></div></td>
+          <td class="text-sm text-ink-soft">05/06/2026</td>
+          <td><button class="btn btn-outline btn-sm">Gérer</button></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-red-pale flex items-center justify-center"><span class="font-display text-red-custom text-xs">SD</span></div>
+              <div><p class="font-semibold text-sm">Sena Dogbe</p><p class="text-xs text-ink-soft">sena@mail.tg</p></div>
+            </div>
+          </td>
+          <td class="text-sm">+228 92 34 56 78</td>
+          <td><div class="flex gap-1 flex-wrap"><span class="badge badge-outline text-[9px]">Scanner</span><span class="badge badge-outline text-[9px]">Vendeur</span></div></td>
+          <td class="text-sm text-ink-soft">10/06/2026</td>
+          <td><button class="btn btn-outline btn-sm">Gérer</button></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-amber-pale flex items-center justify-center"><span class="font-display text-amber-deep text-xs">ML</span></div>
+              <div><p class="font-semibold text-sm">Marie Lawson</p><p class="text-xs text-ink-soft">marie@ambassadeurs.tg</p></div>
+            </div>
+          </td>
+          <td class="text-sm">+228 93 45 67 89</td>
+          <td><div class="flex gap-1 flex-wrap"><span class="badge badge-valid text-[9px]">Acheteur</span><span class="badge badge-amber text-[9px]">Ambassadeur</span></div></td>
+          <td class="text-sm text-ink-soft">15/06/2026</td>
+          <td><button class="btn btn-outline btn-sm">Gérer</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- User detail card (example) -->
+  <div class="mt-6 ticket-card p-5">
+    <div class="flex items-center gap-4 mb-4">
+      <div class="w-14 h-14 rounded-full bg-amber-pale flex items-center justify-center"><span class="font-display text-amber-deep text-lg">JD</span></div>
+      <div>
+        <h3 class="font-display text-xl text-ink">Jean Dupont</h3>
+        <p class="text-sm text-ink-soft">+228 91 23 45 67 — jean@eventpro.tg</p>
+      </div>
+    </div>
+    <div class="stub-divider"></div>
+    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <p class="font-mono text-xs uppercase tracking-wider text-ink-soft mb-2">Rôles actifs</p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="badge badge-valid">Acheteur</span>
+          <span class="badge badge-amber">Organisateur</span>
+          <span class="badge badge-outline">Scanner (Concert Nyékonakpoè)</span>
+        </div>
+      </div>
+      <div>
+        <p class="font-mono text-xs uppercase tracking-wider text-ink-soft mb-2">Notes internes</p>
+        <p class="text-sm text-ink-soft">Organisateur fiable, 3 événements passés sans incident.</p>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billet émis | TixTogo POS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tixtogo.css">
+  <style>
+    @keyframes popIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .pop-in { animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  </style>
+</head>
+<body>
+
+<div class="max-w-lg mx-auto px-4 py-12 pb-24">
+
+  <!-- Succès -->
+  <div class="text-center mb-8 pop-in">
+    <div class="w-20 h-20 mx-auto rounded-full bg-teal flex items-center justify-center mb-4">
+      <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h1 class="font-display text-2xl text-ink">Billet émis !</h1>
+    <p class="text-ink-soft mt-2 text-sm">Le billet a été créé avec succès.</p>
+  </div>
+
+  <!-- Billet -->
+  <div class="ticket-card mb-6 pop-in" style="animation-delay:0.1s;">
+    <div class="p-5">
+      <div class="flex items-center justify-between mb-2">
+        <span class="badge badge-valid">Valide</span>
+        <span class="font-mono text-xs text-ink-soft">Standard</span>
+      </div>
+      <h2 class="font-display text-lg text-ink">Concert — Salle Nyékonakpoè</h2>
+      <p class="text-sm text-ink-soft mt-1">Sam. 15 Août 2026 · 20h00</p>
+    </div>
+    <div class="stub-divider"></div>
+    <div class="p-5 flex items-center justify-between">
+      <span class="ticket-code">#TX-8835-POS</span>
+      <span class="font-display text-xl text-ink">3 000 F CFA</span>
+    </div>
+  </div>
+
+  <!-- QR Code -->
+  <div class="ticket-card p-6 mb-6 text-center pop-in" style="animation-delay:0.2s;">
+    <div class="w-44 h-44 mx-auto rounded-2xl flex items-center justify-center mb-3" style="background:var(--color-paper-soft);border:2px dashed rgba(27,22,15,0.2);">
+      <div class="text-center">
+        <svg class="w-14 h-14 mx-auto text-ink opacity-20" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/><rect x="18" y="14" width="3" height="3"/><rect x="14" y="18" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/></svg>
+        <p class="font-mono text-[10px] text-ink-soft mt-1">QR CODE</p>
+      </div>
+    </div>
+    <p class="font-mono text-sm text-ink font-semibold">#TX-8835-POS</p>
+  </div>
+
+  <!-- Payment info -->
+  <div class="flex items-center gap-3 p-4 rounded-2xl mb-6" style="background:var(--color-amber-pale);">
+    <svg class="w-5 h-5 flex-shrink-0" style="color:var(--color-amber-deep);" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+    <p class="text-sm text-ink">Espèces — <strong>3 000 F</strong> encaissés</p>
+  </div>
+
+  <!-- Actions -->
+  <div class="flex flex-col gap-3">
+    <button class="btn btn-outline btn-lg w-full justify-center">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Envoyer par SMS
+    </button>
+    <a href="index.html" class="btn btn-primary btn-lg w-full justify-center">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Émettre un autre billet
+    </a>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav" style="border-radius:16px 16px 0 0;">
+  <a href="index.html" class="bottom-nav-item">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 5v2m0 4v2m0 4v2M5 5h14a2 2 0 012 2v3a2 2 0 000 4v3a2 2 0 01-2 2H5a2 2 0 01-2-2v-3a2 2 0 000-4V7a2 2 0 012-2z"/></svg>
+    Vendre
+  </a>
+  <a href="ventes.html" class="bottom-nav-item">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+    Historique
+  </a>
+  <a href="#" class="bottom-nav-item active">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    Profil
+  </a>
+</nav>
+
+</body>
+</html>
